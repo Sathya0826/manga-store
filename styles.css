@@ -1,0 +1,306 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+  
+.container {
+    display: flex wrap;
+    flex-direction: column;
+ 
+}
+  
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d72d9;
+    color: white;
+    padding: 1rem;
+    margin-bottom: 0; /* Remove any bottom margin */
+}
+  
+.header-content {
+    display: flex;
+    align-items: center;
+}
+  
+.header-content.left {
+    flex: 1;
+    justify-content: flex-start;
+}
+  
+.header-content.center {
+    flex: 2;
+    justify-content: center;
+    text-align: center;
+}
+  
+.header-content.right {
+    flex: 1;
+    justify-content: flex-end;
+}
+  
+.site-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+  
+a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+  
+a:hover {
+    opacity: 0.8;
+}
+  
+/* Add responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+  
+    .header-content {
+        margin-bottom: 1rem;
+    }
+  
+    .header-content.left, .header-content.right {
+        flex: none;
+    }
+  
+    .header-content.center {
+        margin-bottom: 1rem;
+    }
+}
+  
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    margin: 0; /* Ensure there's no extra margin */
+}
+.action{
+    color:black;
+    font-style:italic;
+    border-radius: 10rem;
+    padding-left: 07cqb;
+}
+.image-container {
+    position: relative;
+    width: 125%;
+    max-width: 200px; /* Adjust as needed */
+  }
+  
+  .manga-cover, .manga-cover-hover {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .manga-cover-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+  
+  .image-container:hover .manga-cover {
+    opacity: 0;
+  }
+  
+  .image-container:hover .manga-cover-hover {
+    opacity: 1;
+  }
+  
+  
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+.manga-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2 rem;
+}
+  
+.manga-item {
+    background-color: rgba(45, 114, 217, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 2cqh;
+}
+  
+.manga-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+  
+.manga-cover {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+  
+.manga-details {
+    padding: 1rem;
+}
+  
+.manga-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+  
+.manga-author {
+    color: #666;
+}
+  
+.manga-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+  
+.manga-price {
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+  
+.add-to-cart-btn {
+    padding: 0.5rem 1rem;
+    background-color: #2d72d9;
+    color: white;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+.add-to-cart-btn:hover {
+    background-color: #1b50a8;
+}
+  
+.cart {
+    background-color: rgba(45, 114, 217, 0.1);
+    border-radius: 2rem;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display:inline-block;
+    position:relative;
+    align-content:flex-end;
+}
+#cart {
+    display: none; /* Initially hidden */
+    /* Add other styles as needed */
+  }
+  .form-container {
+    display: none; /* Hidden by default */
+    /* Add other styles for the form container here */
+  }
+  
+.cart-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+  
+.cart-items {
+    margin-bottom: 1rem;
+}
+  
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+  
+.cart-item-cover {
+    width: 64px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 0.25rem;
+}
+  
+.cart-item-details {
+    flex: 1;
+    margin-left: 1rem;
+}
+  
+.cart-item-title {
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+  
+.cart-item-price {
+    color: #666;
+}
+  
+.remove-from-cart-btn {
+    background-color: transparent;
+    border: none;
+    color: #2d72d9;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+  
+.remove-from-cart-btn:hover {
+    color: #1b50a8;
+}
+  
+.cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.total-label {
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+  
+.total-price {
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+  
+.checkout-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #2d72d9;
+    color: white;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+  
+.checkout-btn:hover {
+    background-color: #1b50a8;
+}
+  
+.footer {
+    background-color: #2d72d9;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+  
+.footer-text {
+    font-size: 0.875rem;
+}
